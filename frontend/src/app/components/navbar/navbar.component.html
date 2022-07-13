@@ -2,8 +2,10 @@
     <div class="container-fluid">
         <a class="navbar-brand">Navbar</a>
         <div>
-            <a class="navbar-brand" routerLink="login">Login</a>
-            <a class="navbar-brand" routerLink="profile">profile</a>
+            <a class="navbar-brand" routerLink="/login" *ngIf="!loggedIn">Login</a>
+            <a class="navbar-brand" href='#' (click)="logout($event)" *ngIf = "loggedIn">Logout</a>
+
+            <a class="navbar-brand" routerLink="/profile" *ngIf="loggedIn">profile</a>
         </div>
     </div>
-  </nav>
+</nav>
